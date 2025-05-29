@@ -2,115 +2,166 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Electro Hoterm SRL</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Roboto',sans-serif;background:#fff;color:#333;}
-    a{color:inherit;text-decoration:none}
-    nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:100}
-    .logo{font-size:1.5rem;font-weight:700;color:#0044cc}
-    .links a{margin-left:1.5rem;font-weight:500;color:#0044cc;transition:color .3s}
-    .links a:hover{color:#002a80}
-    .hero{height:100vh;background:url('https://via.placeholder.com/1200x800?text=Hero+Image') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:0 1rem}
-    .hero:before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5)}
-    .hero-content{position:relative;color:#fff;max-width:800px;}
-    .hero-content h1{font-size:3rem;margin-bottom:1rem}
-    .hero-content .tagline{font-size:1.25rem;opacity:.9;margin-bottom:1rem}
-    .hero-content p{font-size:1.2rem;margin-bottom:2rem}
-    .btn{display:inline-block;background:#ff6600;color:#fff;padding:.75rem 1.5rem;border-radius:4px;font-size:1rem;cursor:pointer;transition:background .3s}
-    .btn:hover{background:#e65500}
-    section{padding:6rem 2rem}
-    .container{max-width:1000px;margin:auto}
-    h2{text-align:center;color:#0044cc;margin-bottom:2rem;font-size:2.5rem}
-    .services{background:#f0f8ff}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-    .service-card{background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);padding:2rem;text-align:center;transition:transform .3s;opacity:0;transform:translateY(20px);}
-    .service-card:hover{transform:translateY(-10px)}
-    .service-card.enter{opacity:1;transform:translateY(0)}
-    .service-card img{width:80px;margin-bottom:1rem}
-    .service-card h3{font-size:1.25rem;margin-bottom:.5rem}
-    .animate-on-scroll{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
-    .animate-on-scroll.enter{opacity:1;transform:translateY(0)}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .project-item{position:relative;border-radius:8px;overflow:hidden;opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}
-    .project-item.enter{opacity:1;transform:translateY(0)}
-    .project-item img{width:100%;display:block;}
-    .project-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.5);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;opacity:0;transition:opacity .3s}
-    .project-item:hover .project-overlay{opacity:1}
-    .contact p{font-size:1.2rem;margin:1rem 0;text-align:center}
-    .contact a{color:#ffeb3b;font-weight:600}
-    footer{text-align:center;padding:2rem 1rem;background:#002a80;color:#ccc;font-size:.9rem}
+    * { box-sizing: border-box; margin: 0; padding: 0;}
+    body { font-family: 'Roboto', Arial, sans-serif; background: #f6fafd; color: #1a237e; }
+    nav { width: 100%; background: #fff; box-shadow: 0 2px 8px #e3e3e3; position: fixed; top: 0; z-index: 10; }
+    .nav-wrap { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .logo { font-size: 1.6rem; font-weight: bold; color: #1769aa;}
+    .nav-links { display: flex; gap: 1.5rem;}
+    .nav-links a { color: #1a237e; font-weight: 500; text-decoration: none; transition: color .2s;}
+    .nav-links a:hover { color: #1769aa;}
+    .hero { height: 90vh; background: linear-gradient(135deg,#1769aa 70%,#82b1ff 100%); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;}
+    .hero .hero-inner { max-width: 650px; margin: auto;}
+    .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1.2rem;}
+    .hero .tagline { font-size: 1.25rem; opacity: 0.92; margin-bottom: 2.2rem;}
+    .hero img { border-radius: 16px; width: 100%; max-width: 400px; margin: 1.5rem auto 0; box-shadow: 0 6px 24px #15508050;}
+    .btn-main { background: #fff; color: #1769aa; font-weight: 700; padding: 0.9rem 2.2rem; border-radius: 40px; font-size: 1.1rem; border: none; box-shadow: 0 2px 8px #82b1ff50; cursor: pointer; margin-top: 1.5rem; transition: background .2s, color .2s;}
+    .btn-main:hover { background: #1769aa; color: #fff; }
+    section { padding: 5rem 1rem; max-width: 1100px; margin: auto;}
+    h2 { color: #1769aa; text-align: center; margin-bottom: 2.5rem; font-size: 2.3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 2.2rem; }
+    .service-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #b3c6e7c4; padding: 2rem 1rem 1.3rem; text-align: center; transition: transform .3s; opacity:0; transform:translateY(40px);}
+    .service-card.enter { opacity:1; transform:translateY(0);}
+    .service-card img { width: 70px; margin-bottom: 1.1rem;}
+    .service-card h3 { font-size: 1.15rem; margin-bottom: .4rem;}
+    .service-card p { color: #424242; font-size: 0.98rem;}
+    .about-wrap { display: flex; flex-wrap: wrap; gap: 2.3rem; align-items: center;}
+    .about-img { flex:1; min-width:220px; border-radius: 12px; box-shadow: 0 4px 14px #b3c6e770; opacity:0; transform:translateX(-40px);}
+    .about-img.enter { opacity:1; transform:translateX(0);}
+    .about-text { flex:2; min-width:240px;}
+    .about-text.enter { opacity:1; transform:translateX(0);}
+    .about-text p { font-size: 1.08rem; color: #263238; line-height:1.65;}
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 1.7rem;}
+    .project-card { position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px #b3c6e770; opacity:0; transform:translateY(40px);}
+    .project-card.enter { opacity:1; transform:translateY(0);}
+    .project-card img { width: 100%; display: block;}
+    .project-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg,transparent 40%,#1769aa 100%); color:#fff; padding: 1rem 1.2rem; font-weight: 600;}
+    .contact-card { background: #e3f2fd; border-radius: 10px; max-width: 450px; margin: 2rem auto 0; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 2px 16px #a9cbe7cc; opacity:0; transform:translateY(40px);}
+    .contact-card.enter { opacity:1; transform:translateY(0);}
+    .contact-card h2 { margin-bottom: 1.1rem;}
+    .contact-card p { color: #1a237e; margin: 1rem 0; }
+    .contact-card a { color: #1769aa; font-weight: bold; text-decoration: none;}
+    .contact-card a:hover { text-decoration: underline;}
+    footer { background: #1769aa; color: #fff; text-align: center; padding: 2.5rem 1rem 1.1rem; margin-top: 3rem; }
+    /* Animációk */
+    .animate-on-scroll { opacity:0; transform:translateY(40px); transition:opacity .7s cubic-bezier(.5,1.8,.5,1),transform .7s cubic-bezier(.5,1.8,.5,1);}
+    .animate-on-scroll.enter { opacity:1; transform:translateY(0);}
+    @media(max-width:700px){ .about-wrap{flex-direction:column;gap:1.3rem;} .about-img,.about-text{min-width:0; width:100%;} .hero{height:70vh;} }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">Electro Hoterm SRL</div>
-    <div class="links">
-      <a href="#home">Főoldal</a>
-      <a href="#services">Szolgáltatások</a>
-      <a href="#about">Rólunk</a>
-      <a href="#projects">Referenciák</a>
-      <a href="#contact">Kapcsolat</a>
+    <div class="nav-wrap">
+      <span class="logo">Electro Hoterm</span>
+      <div class="nav-links">
+        <a href="#home">Főoldal</a>
+        <a href="#services">Szolgáltatások</a>
+        <a href="#about">Rólunk</a>
+        <a href="#projects">Referenciák</a>
+        <a href="#contact">Kapcsolat</a>
+      </div>
     </div>
   </nav>
 
-  <header id="home" class="hero animate-on-scroll">
-    <div class="hero-content">
-      <h1>Electro Hoterm SRL</h1>
-      <div class="tagline">Okos fűtés és tiszta energia – megbízható szakértelemmel</div>
-      <p>Villanyszerelés, fűtésszerelés, napelem rendszerek telepítése és karbantartás</p>
-      <button class="btn">Kérj ajánlatot</button>
+  <section id="home" class="hero animate-on-scroll">
+    <div class="hero-inner">
+      <h1>Okos fűtés és tiszta energia</h1>
+      <div class="tagline">A megbízható partnered otthonod energiamodernizálásában.</div>
+      <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Ajánlatkérés</button>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Modern épület napelemmel">
     </div>
-  </header>
+  </section>
 
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Szolgáltatásaink</h2>
-      <div class="services-grid">
-        <div class="service-card animate-on-scroll"><img src="https://via.placeholder.com/80/0044cc/ffffff?text=⚡" alt="Villanyszerelés"><h3>Villanyszerelés</h3></div>
-        <div class="service-card animate-on-scroll"><img src="https://via.placeholder.com/80/dd2c00/ffffff?text=🔥" alt="Fűtésszerelés"><h3>Fűtésszerelés</h3></div>
-        <div class="service-card animate-on-scroll"><img src="https://via.placeholder.com/80/ffb300/ffffff?text=☀️" alt="Napelemek"><h3>Napelemek</h3></div>
-        <div class="service-card animate-on-scroll"><img src="https://via.placeholder.com/80/00897b/ffffff?text=🏠" alt="Okosotthon"><h3>Okosotthon</h3></div>
+  <section id="services">
+    <h2>Szolgáltatásaink</h2>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll">
+        <img src="https://cdn-icons-png.flaticon.com/512/254/254434.png" alt="Villanyszerelés">
+        <h3>Villanyszerelés</h3>
+        <p>Új és meglévő elektromos hálózatok tervezése, kivitelezése, hibakeresés, karbantartás.</p>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Fűtésszerelés">
+        <h3>Fűtésszerelés</h3>
+        <p>Padlófűtés, radiátoros rendszerek, modern, gazdaságos megoldások családi házaknak és cégeknek.</p>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" alt="Napelem rendszerek">
+        <h3>Napelem rendszerek</h3>
+        <p>Napelemes rendszerek teljes körű tervezése és telepítése, naprakész engedélyeztetés.</p>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <img src="https://cdn-icons-png.flaticon.com/512/3097/3097969.png" alt="Okosotthon">
+        <h3>Okosotthon</h3>
+        <p>Automatizálás, okos vezérlés, energiamonitoring: kényelmes, jövőálló otthon.</p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about animate-on-scroll">
-    <div class="container">
-      <h2>Rólunk</h2>
-      <p>Több mint 10 éve nyújtunk megbízható és professzionális elektromos és fűtési megoldásokat. Célunk, hogy ügyfeleink otthonát és vállalkozását biztonságossá és energiahatékonnyá tegyük.</p>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2>Referenciák</h2>
-      <div class="projects-grid">
-        <div class="project-item animate-on-scroll"><img src="https://via.placeholder.com/300x200" alt="Projekt 1"><div class="project-overlay">Projekt 1</div></div>
-        <div class="project-item animate-on-scroll"><img src="https://via.placeholder.com/300x200" alt="Projekt 2"><div class="project-overlay">Projekt 2</div></div>
-        <div class="project-item animate-on-scroll"><img src="https://via.placeholder.com/300x200" alt="Projekt 3"><div class="project-overlay">Projekt 3</div></div>
-        <div class="project-item animate-on-scroll"><img src="https://via.placeholder.com/300x200" alt="Projekt 4"><div class="project-overlay">Projekt 4</div></div>
+  <section id="about">
+    <h2>Rólunk</h2>
+    <div class="about-wrap">
+      <img class="about-img animate-on-scroll" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=700&q=80" alt="Csapat a munka közben">
+      <div class="about-text animate-on-scroll">
+        <p>
+          Több mint 10 éves tapasztalat, lelkes csapat és a legmodernebb technológiák: az Electro Hoterm SRL célja, hogy ügyfelei számára gyors, korrekt, és fenntartható energetikai és komfort megoldásokat kínáljon.<br><br>
+          Lakossági és ipari projektek, villanyszereléstől a fűtésen át a napelemig – nálunk minden egy kézben!
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact animate-on-scroll">
-    <div class="container">
+  <section id="projects">
+    <h2>Referenciák</h2>
+    <div class="projects-grid">
+      <div class="project-card animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbe0?auto=format&fit=crop&w=600&q=80" alt="Családi ház napelemmel">
+        <div class="project-caption">Családi ház – napelemes rendszer</div>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1449247613801-ab06418e2861?auto=format&fit=crop&w=600&q=80" alt="Ipari csarnok elektromos hálózat">
+        <div class="project-caption">Ipari csarnok villanyszerelés</div>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="Okos otthon">
+        <div class="project-caption">Okosotthon automatizáció</div>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Fűtés szerelés">
+        <div class="project-caption">Padlófűtés szerelés</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-card animate-on-scroll">
       <h2>Kapcsolat</h2>
-      <p>Telefon: <a href="tel:+40743062253">0743 062 253</a></p>
-      <p>Email: <a href="mailto:electrohoterm@gmail.com">electrohoterm@gmail.com</a></p>
+      <p><b>Telefon:</b> <a href="tel:+40743062253">0743 062 253</a></p>
+      <p><b>Email:</b> <a href="mailto:electrohoterm@gmail.com">electrohoterm@gmail.com</a></p>
+      <p><b>Cím:</b> Gyergyóalfalu, Hargita megye</p>
     </div>
   </section>
 
-  <footer class="animate-on-scroll">&copy; 2025 Electro Hoterm SRL. Minden jog fenntartva.</footer>
+  <footer>
+    © 2025 Electro Hoterm SRL – Minden jog fenntartva.
+  </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('enter');observer.unobserve(e.target)}})},{threshold:0.1});
-      document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
+    // Görgetésre animáció
+    document.addEventListener('DOMContentLoaded', function() {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('enter');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.17 });
+      document.querySelectorAll('.animate-on-scroll, .service-card, .about-img, .about-text, .project-card, .contact-card').forEach(el => obs.observe(el));
     });
   </script>
 </body>
