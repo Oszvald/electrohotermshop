@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electro Hoterm SRL</title>
+  <style>
+    /* Base reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    /* Navigation */
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); display: flex; justify-content: center; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 100; }
+    nav a { margin: 0 1rem; font-weight: bold; color: #0044cc; }
+    /* Hero */
+    .hero { height: 100vh; background: url('https://via.placeholder.com/1200x800') center/cover no-repeat; display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+    .hero-content { position: relative; text-align: center; color: #fff; animation: fadeIn 1s ease-out both; }
+    .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .btn { display: inline-block; background: #ff6600; color: #fff; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+    /* Sections */
+    section { padding: 4rem 1rem; }
+    .container { max-width: 1000px; margin: auto; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #0044cc; }
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; }
+    .card { background: #fff; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); animation: fadeInUp 0.8s both; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.4s; }
+    .card:nth-child(4) { animation-delay: 0.6s; }
+    .card img { width: 60px; margin-bottom: 1rem; }
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Főoldal</a>
+    <a href="#services">Szolgáltatások</a>
+    <a href="#contact">Kapcsolat</a>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Okos fűtés és tiszta energia</h1>
+      <p>Professzionális villanyszerelés, fűtésszerelés és napelem rendszerek</p>
+      <div class="btn">Kérj ajánlatot</div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2>Szolgáltatásaink</h2>
+      <div class="services-grid">
+        <div class="card"><img src="https://via.placeholder.com/60" alt="Villanyszerelés"><h3>Villanyszerelés</h3></div>
+        <div class="card"><img src="https://via.placeholder.com/60" alt="Fűtésszerelés"><h3>Fűtésszerelés</h3></div>
+        <div class="card"><img src="https://via.placeholder.com/60" alt="Napelemek"><h3>Napelemek</h3></div>
+        <div class="card"><img src="https://via.placeholder.com/60" alt="Okosotthon"><h3>Okosotthon</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Kapcsolat</h2>
+      <p>Email: electrohoterm@gmail.com</p>
+      <p>Telefon: 0743 062 253</p>
+    </div>
+  </section>
+</body>
+</html>
