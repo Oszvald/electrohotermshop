@@ -14,11 +14,30 @@
     .nav-links { display: flex; gap: 1.5rem;}
     .nav-links a { color: #1a237e; font-weight: 500; text-decoration: none; transition: color .2s;}
     .nav-links a:hover { color: #1769aa;}
-    .hero { height: 90vh; background: linear-gradient(135deg,#1769aa 70%,#82b1ff 100%); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;}
-    .hero .hero-inner { max-width: 650px; margin: auto;}
+    .hero {
+      height: 90vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .hero:before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(18, 52, 100, 0.60);
+      z-index: 0;
+    }
+    .hero-inner {
+      max-width: 650px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
     .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1.2rem;}
     .hero .tagline { font-size: 1.25rem; opacity: 0.92; margin-bottom: 2.2rem;}
-    .hero img { border-radius: 16px; width: 100%; max-width: 400px; margin: 1.5rem auto 0; box-shadow: 0 6px 24px #15508050;}
     .btn-main { background: #fff; color: #1769aa; font-weight: 700; padding: 0.9rem 2.2rem; border-radius: 40px; font-size: 1.1rem; border: none; box-shadow: 0 2px 8px #82b1ff50; cursor: pointer; margin-top: 1.5rem; transition: background .2s, color .2s;}
     .btn-main:hover { background: #1769aa; color: #fff; }
     section { padding: 5rem 1rem; max-width: 1100px; margin: auto;}
@@ -47,7 +66,6 @@
     .contact-card a { color: #1769aa; font-weight: bold; text-decoration: none;}
     .contact-card a:hover { text-decoration: underline;}
     footer { background: #1769aa; color: #fff; text-align: center; padding: 2.5rem 1rem 1.1rem; margin-top: 3rem; }
-    /* Animációk */
     .animate-on-scroll { opacity:0; transform:translateY(40px); transition:opacity .7s cubic-bezier(.5,1.8,.5,1),transform .7s cubic-bezier(.5,1.8,.5,1);}
     .animate-on-scroll.enter { opacity:1; transform:translateY(0);}
     @media(max-width:700px){ .about-wrap{flex-direction:column;gap:1.3rem;} .about-img,.about-text{min-width:0; width:100%;} .hero{height:70vh;} }
@@ -72,7 +90,7 @@
       <h1>Okos fűtés és tiszta energia</h1>
       <div class="tagline">A megbízható partnered otthonod energiamodernizálásában.</div>
       <button class="btn-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Ajánlatkérés</button>
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Modern épület napelemmel">
+      <!-- Tájkép ELTÁVOLÍTVA -->
     </div>
   </section>
 
@@ -151,7 +169,6 @@
   </footer>
 
   <script>
-    // Görgetésre animáció
     document.addEventListener('DOMContentLoaded', function() {
       const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
