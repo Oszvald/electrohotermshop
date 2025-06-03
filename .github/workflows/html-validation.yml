@@ -1,0 +1,25 @@
+name: HTML validation
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'validate-html.js'
+      - 'package.json'
+      - '.github/workflows/html-validation.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'validate-html.js'
+      - 'package.json'
+      - '.github/workflows/html-validation.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm test
