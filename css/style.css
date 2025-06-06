@@ -1,0 +1,472 @@
+/* ================================
+   Alapváltozók, betűk, globális beállítások
+   ================================ */
+:root {
+  --main-blue: #1565c0;
+  --main-orange: #ff6600;
+  --light-blue: #e3f2fd;
+  --nav-transp: rgba(21, 101, 192, 0.82);
+  --dark-blue: #0d305d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f9fbfd;
+  color: var(--dark-blue);
+  line-height: 1.5;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+nav {
+  width: 100%;
+  background: var(--nav-transp);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px #08407530;
+}
+.nav-wrap {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  position: relative;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.logo img {
+  height: 36px;
+  width: auto;
+  border-radius: 7px;
+}
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  transition: none;
+}
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.06rem;
+  letter-spacing: 0.01em;
+  transition: color 0.22s;
+}
+.nav-links a:hover {
+  color: var(--main-orange);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  z-index: 200;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+/* Mobil nézet: hamburger + lenyíló menü */
+@media (max-width: 800px) {
+  .nav-links {
+    position: absolute;
+    top: 62px;
+    right: 10px;
+    background: var(--nav-transp);
+    border-radius: 12px;
+    box-shadow: 0 6px 32px #0002;
+    padding: 1.2rem 1.5rem 1.2rem 1.3rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    min-width: 140px;
+    z-index: 150;
+    animation: menuFade 0.35s;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-wrap {
+    padding: 0.8rem 0.7rem;
+  }
+}
+@keyframes menuFade {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   HERO SZEKTOR
+   ================================ */
+.hero {
+  height: 92vh;
+  min-height: 480px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: url('../img/hero-bg.jpg') center/cover no-repeat;
+}
+.hero:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(21, 101, 192, 0.8) 45%,
+    rgba(255, 102, 0, 0.24) 100%
+  );
+  z-index: 0;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: auto;
+  padding-top: 4.2rem;
+  /* Alsó padding, hogy ne csússzon rá a következő blokk */
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero-tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 2px 10px #08407599, 0 0px 2px #fff8;
+}
+.btn-main {
+  background: var(--main-orange);
+  color: #fff;
+  font-weight: 700;
+  padding: 1.1rem 2.2rem;
+  border-radius: 40px;
+  font-size: 1.15rem;
+  border: none;
+  box-shadow: 0 2px 8px #1769aa55;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-main:hover {
+  background: var(--main-blue);
+  color: #fff;
+}
+
+/* Mobilos hero magasság */
+@media (max-width: 700px) {
+  .hero {
+    height: 70vh;
+  }
+  .hero-inner {
+    padding-bottom: 5rem;
+  }
+}
+
+/* ================================
+   SZOLGÁLTATÁSOK (SERVICES)
+   ================================ */
+section {
+  padding: 5.5rem 1rem 4rem 1rem;
+  max-width: 1150px;
+  margin: auto;
+}
+.services-block {
+  background: var(--main-blue);
+  border-radius: 22px;
+  padding: 3rem 1.5rem;
+  box-shadow: 0 4px 20px #10407316;
+  margin-top: 3rem;
+}
+.services-block h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2.5rem;
+}
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #b3c6e7c4;
+  padding: 2rem 1rem 1.3rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s cubic-bezier(0.5, 1.8, 0.5, 1),
+    transform 0.7s cubic-bezier(0.5, 1.8, 0.5, 1);
+}
+.service-card.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+.service-card img {
+  width: 54px;
+  margin-bottom: 1rem;
+}
+.service-card h3 {
+  font-size: 1.14rem;
+  margin-bottom: 0.35rem;
+  color: var(--main-blue);
+}
+.service-card p {
+  color: #263238;
+  font-size: 0.98rem;
+}
+
+/* Mobilon a szolgáltatás kártya rács egy oszlopba álljon */
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-block {
+    margin-top: 2rem;
+  }
+}
+
+/* ================================
+   RÓLUNK (ABOUT)
+   ================================ */
+.about-section h2 {
+  color: var(--main-blue);
+  text-align: center;
+  margin-bottom: 2.3rem;
+  font-size: 2.15rem;
+}
+.about-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+.about-img {
+  flex: 1;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px #b3c6e770;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.about-img.enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-text {
+  flex: 2;
+  min-width: 240px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.about-text.enter {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-text p {
+  font-size: 1.09rem;
+  color: #263238;
+  line-height: 1.6;
+}
+.logos-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.logos-row img {
+  height: 34px;
+  border-radius: 6px;
+}
+
+/* Mobilon a „Rólunk” képet és szöveget egy oszlopba rendezzük */
+@media (max-width: 900px) {
+  .about-block {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .about-img,
+  .about-text {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ================================
+   REFERENCIÁK (PROJECTS)
+   ================================ */
+.projects-section h2 {
+  color: var(--main-blue);
+  text-align: center;
+  margin-bottom: 2.3rem;
+  font-size: 2.15rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.project-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px #b3c6e770;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.project-card.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card img {
+  width: 100%;
+  display: block;
+}
+.project-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 40%, #1565c0 100%);
+  color: #fff;
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+}
+
+/* ================================
+   KAPCSOLAT (CONTACT)
+   ================================ */
+.contact-section {
+  padding-top: 4rem; /* hogy ne lógjon a navbar alá */
+}
+.contact-card {
+  background: var(--main-blue);
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 2.8rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 16px #a9cbe7cc;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.contact-card.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-card h2 {
+  margin-bottom: 1.2rem;
+}
+.contact-card p {
+  color: #fff;
+  margin: 1rem 0;
+}
+.contact-card a {
+  color: #ffeb3b;
+  font-weight: bold;
+  text-decoration: none;
+}
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+  background: var(--main-orange);
+  color: #fff;
+  text-align: center;
+  padding: 2.1rem 1rem 1.1rem;
+  margin-top: 2.5rem;
+  font-size: 0.99rem;
+  letter-spacing: 0.01em;
+}
+
+/* ================================
+   GÖRGETÉSRE INICIALIZÁLÁS EFFEKTUS (Intersection Observer)
+   ================================ */
+.animate-on-scroll,
+.service-card,
+.about-img,
+.about-text,
+.project-card,
+.contact-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.animate-on-scroll.enter,
+.service-card.enter,
+.about-img.enter,
+.about-text.enter,
+.project-card.enter,
+.contact-card.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   HIBAJAVÍTÁSOK, INDUSTRIAL STYLING
+   (pl. scroll-margin-top az anchor linkekhez)
+   ================================ */
+@media (max-width: 900px) {
+  section {
+    scroll-margin-top: 80px;
+  }
+}
