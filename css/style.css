@@ -139,34 +139,32 @@ nav {
    HERO SZEKTOR
    ================================ */
 .hero {
-  height: 92vh;
+  position: relative;
   min-height: 480px;
-  color: #fff;
+  height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-  background: url('../img/hero-bg.jpg') center/cover no-repeat;
+  overflow: hidden; /* hogy ne lógjon ki a videó */
 }
-.hero:before {
-  content: '';
+.hero-bg-video {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(21, 101, 192, 0.8) 45%,
-    rgba(255, 102, 0, 0.24) 100%
-  );
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
+  opacity: 0.64;  /* ha szeretnéd, halványítsd! */
+  pointer-events: none;
 }
 .hero-inner {
   position: relative;
   z-index: 2;
   max-width: 760px;
   margin: auto;
+  color: #fff;
   padding-top: 4.2rem;
-  /* Alsó padding, hogy ne csússzon rá a következő blokk */
   padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
