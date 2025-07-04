@@ -475,3 +475,35 @@ footer {
     scroll-margin-top: 80px;
   }
 }
+.lang-switch-mobile {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-top: 1.3rem;
+  padding-left: 0.3rem;
+}
+.lang-btn-mobile {
+  background: #fff;
+  color: #1565c0;
+  border: 1.5px solid #1565c0;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 4px 14px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-btn-mobile.active,
+.lang-btn-mobile:hover {
+  background: #1565c0;
+  color: #fff;
+  border-color: #1565c0;
+}
+@media (max-width: 800px) {
+  .lang-switch-mobile {
+    margin-top: 1.1rem;
+    padding-left: 0.1rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
