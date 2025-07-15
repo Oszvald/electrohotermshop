@@ -542,4 +542,37 @@ html {
   color: #007BFF; /* vagy a fő színed */
 }
 
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.language-switcher button {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Mobilnézetre – hamburger menü alatt jelenjen meg blokkban */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .language-switcher {
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .language-switcher button {
+    width: 100%;
+    text-align: left;
+  }
+}
 
