@@ -542,43 +542,4 @@ html {
   color: #007BFF; /* vagy a fő színed */
 }
 
-/* Közös gombstílus */
-.language-switcher button {
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  margin: 0.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.language-switcher button:hover {
-  background: white;
-  color: #007BFF;
-}
-
-/* Alapértelmezetten csak a desktop verzió látszik */
-.desktop-lang {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-.mobile-lang {
-  display: none;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-/* Mobil nézet – a desktop nyelvválasztót rejtsük el, és mutassuk a mobilost */
-@media (max-width: 768px) {
-  .desktop-lang {
-    display: none;
-  }
-  .mobile-lang {
-    display: flex;
-  }
-}
 
