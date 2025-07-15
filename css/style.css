@@ -518,3 +518,7 @@ footer {
   resize: vertical;
   min-height: 120px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
