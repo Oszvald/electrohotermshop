@@ -15,28 +15,31 @@
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav>
-    <div class="nav-wrap">
-      <a href="#home" class="logo">
-        <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó" />
-        Electro Hoterm
-      </a>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menü megnyitása">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="#home">Főoldal</a>
-        <a href="#services">Szolgáltatások</a>
-        <a href="#about">Rólunk</a>
-        <a href="#projects">Referenciák</a>
-        <a href="#contact">Kapcsolat</a>
+<nav>
+  <div class="nav-wrap">
+    <a href="#home" class="logo">
+      <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó" />
+      Electro Hoterm
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menü megnyitása">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Főoldal</a>
+      <a href="#services">Szolgáltatások</a>
+      <a href="#about">Rólunk</a>
+      <a href="#projects">Referenciák</a>
+      <a href="#contact">Kapcsolat</a>
+
+      <!-- Nyelvválasztó a menü végén -->
+      <div class="language-switcher">
+        <button onclick="setLanguage('hu')">🇭🇺 Magyar</button>
+        <button onclick="setLanguage('ro')">🇷🇴 Română</button>
       </div>
-    <!-- Nyelvválasztó mobilnézethez -->
-  <div class="language-switcher">
-    <button onclick="setLanguage('hu')">🇭🇺 Magyar</button>
-    <button onclick="setLanguage('ro')">🇷🇴 Română</button>
+    </div>
   </div>
-</div>
   </nav>
 
   <!-- HERO SZEKTOR -->
