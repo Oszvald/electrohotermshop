@@ -561,14 +561,17 @@ footer {
   padding: 1rem;
   font-size: 1.1rem;
   font-weight: 700;
-}
+   
+/* Több hely a logók után */
 .logos-row {
-  margin-bottom: 1.5rem; /* tetszőleges érték, pl. 1.5rem */
+  margin-bottom: 2rem; /* tetszés szerinti érték, pl. 2rem */
 }
 
-hr {
-  margin-top: 1.5rem;    /* hogy a vonal se csússzon túl közel a logókhoz */
+/* Nagyobb logók */
+.logos-row img {
+  height: 50px;       /* korábban 34px volt, emeld pl. 50px-re */
+  width: auto;        /* arányt megtartva */
+  object-fit: contain;
 }
-
 
 
