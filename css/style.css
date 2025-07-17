@@ -569,7 +569,7 @@ footer {
 
 /* Nagyobb logók */
 .logos-row img {
-  height: 50px;       /* korábban 34px volt, emeld pl. 50px-re */
+  height: 100px;       /* korábban 34px volt, emeld pl. 50px-re */
   width: auto;        /* arányt megtartva */
   object-fit: contain;
 }
