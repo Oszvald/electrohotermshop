@@ -447,25 +447,23 @@ footer {
 /* ================================
    GÖRGETÉSRE INICIALIZÁLÁS EFFEKTUS (Intersection Observer)
    ================================ */
-/* only animate items marked for scroll-in */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity .7s, transform .7s;
-}
-.animate-on-scroll.enter {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* leave service-cards, project-cards, etc. visible by default */
+.animate-on-scroll,
 .service-card,
 .about-img,
 .about-text,
 .project-card,
 .contact-card {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.animate-on-scroll.enter,
+.service-card.enter,
+.about-img.enter,
+.about-text.enter,
+.project-card.enter,
+.contact-card.enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ================================
