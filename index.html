@@ -6,227 +6,154 @@
   <title>Electro Hoterm SRL – Okos fűtés és tiszta energia</title>
   <link rel="icon" type="image/gif" href="img/Electro Hoterm logo.gif" />
   <!-- Google Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- Saját stíluslap -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- NAVBAR -->
-<nav>
-  <div class="nav-wrap">
-    <a href="#home" class="logo">
-      <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó" />
-      Electro Hoterm
-    </a>
-
-    <button class="menu-toggle" id="menu-toggle" aria-label="Menü megnyitása">
-      <span></span><span></span><span></span>
-    </button>
-
-    <div class="nav-links" id="nav-links">
-      <a href="#home">Főoldal</a>
-      <a href="#services">Szolgáltatások</a>
-      <a href="#about">Rólunk</a>
-      <a href="#projects">Referenciák</a>
-      <a href="#contact">Kapcsolat</a>
-
-      <!-- Nyelvválasztó a menü végén -->
-      <div class="language-switcher">
-  <!-- Magyar oldalra mutató gomb -->
-  <button onclick="window.location.href='index.html'">
-    🇭🇺 Magyar
-  </button>
-  <!-- Román oldalra mutató gomb -->
-  <button onclick="window.location.href='ro.html'">
-    🇷🇴 Română
-  </button>
-</div>
+  <nav>
+    <div class="nav-wrap">
+      <a href="#home" class="logo">
+        <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó" />
+        <span data-i18n="nav.brand">Electro Hoterm</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü megnyitása">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" data-i18n="nav.home">Főoldal</a>
+        <a href="#services" data-i18n="nav.services">Szolgáltatások</a>
+        <a href="#about" data-i18n="nav.about">Rólunk</a>
+        <a href="#projects" data-i18n="nav.projects">Referenciák</a>
+        <a href="#contact" data-i18n="nav.contact">Kapcsolat</a>
+        <div class="language-switcher">
+          <button data-lang="hu">🇭🇺 Magyar</button>
+          <button data-lang="ro">🇷🇴 Română</button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO SZEKTOR -->
-  <section class="hero">
-  <video autoplay muted loop playsinline class="hero-bg-video">
-    <source src="img/259949.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <h1>Okos fűtés és tiszta energia,<br>az Electro Hoterm megoldja!</h1>
-    <p class="hero-tagline">A megbízható partnered otthonod energiamodernizálásában.</p>
-    <a href="#contact" class="btn-main">Ajánlatkérés</a>
-  </div>
-</section>
-
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline class="hero-bg-video">
+      <source src="img/259949.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1 data-i18n="hero.title">Okos fűtés és tiszta energia,<br>az Electro Hoterm megoldja!</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">A megbízható partnered otthonod energiamodernizálásában.</p>
+      <a href="#contact" class="btn-main" data-i18n="hero.button">Ajánlatkérés</a>
+    </div>
+  </section>
 
   <!-- SZOLGÁLTATÁSOK -->
   <section id="services" class="services-block">
-    <h2>Szolgáltatásaink</h2>
+    <h2 data-i18n="services.title">Szolgáltatásaink</h2>
     <div class="services-grid">
       <div class="service-card">
         <img src="img/solar-panel.png" alt="Napelem ikon" />
-        <h3>Napelem</h3>
-        <p>
-          Napelemes rendszerek teljes körű tervezése és telepítése – modern
-          energiatakarékosság!
-        </p>
+        <h3 data-i18n="service.solar.title">Napelem</h3>
+        <p data-i18n="service.solar.desc">Napelemes rendszerek teljes körű tervezése és telepítése – modern energiatakarékosság!</p>
       </div>
       <div class="service-card">
         <img src="img/air-source-heat-pump.png" alt="Hőszivattyú ikon" />
-        <h3>Hőszivattyú</h3>
-        <p>
-          Energiatakarékos hűtés-fűtés, környezetbarát és gazdaságos
-          technológia.
-        </p>
+        <h3 data-i18n="service.heatpump.title">Hőszivattyú</h3>
+        <p data-i18n="service.heatpump.desc">Energiatakarékos hűtés-fűtés, környezetbarát és gazdaságos technológia.</p>
       </div>
       <div class="service-card">
         <img src="img/electrical-service.png" alt="Villanyszerelés ikon" />
-        <h3>Villanyszerelés</h3>
-        <p>
-          Új és meglévő elektromos hálózatok tervezése, kivitelezése,
-          karbantartása.
-        </p>
+        <h3 data-i18n="service.electrical.title">Villanyszerelés</h3>
+        <p data-i18n="service.electrical.desc">Új és meglévő elektromos hálózatok tervezése, kivitelezése, karbantartása.</p>
       </div>
       <div class="service-card">
         <img src="img/house.png" alt="Fűtés ikon" />
-        <h3>Fűtésszerelés</h3>
-        <p>
-          Padlófűtés, radiátoros rendszerek, fűtésszerelés korszerűen,
-          takarékosan.
-        </p>
+        <h3 data-i18n="service.heating.title">Fűtésszerelés</h3>
+        <p data-i18n="service.heating.desc">Padlófűtés, radiátoros rendszerek, fűtésszerelés korszerűen, takarékosan.</p>
       </div>
       <div class="service-card">
         <img src="img/smart-house.png" alt="Okosotthon ikon" />
-        <h3>Okosotthon</h3>
-        <p>
-          Automatizálás, vezérlés, kényelmes és jövőálló otthon – távolról is!
-        </p>
+        <h3 data-i18n="service.smarthome.title">Okosotthon</h3>
+        <p data-i18n="service.smarthome.desc">Automatizálás, vezérlés, kényelmes és jövőálló otthon – távolról is!</p>
       </div>
       <div class="service-card">
-      <img src="img/plumbing.png" alt="Vízszerelés">
-      <h3>Vízszerelés</h3>
-      <p>
-        Vízvezetékek, csapok, szaniterek szerelése és javítása, gyors hibaelhárítás.
-      </p>
+        <img src="img/plumbing.png" alt="Vízszerelés ikon" />
+        <h3 data-i18n="service.plumbing.title">Vízszerelés</h3>
+        <p data-i18n="service.plumbing.desc">Vízvezetékek, csapok, szaniterek szerelése és javítása, gyors hibaelhárítás.</p>
       </div>
-      <div class="service-card animate-on-scroll">
-      <img src="img/air-conditioner.png" alt="Klíma">
-      <h3>Klímaberendezés</h3>
-      <p>Hatékony hűtés-fűtés modern, energiatakarékos klímatechnikával.</p>
-</div>
-
+      <div class="service-card">
+        <img src="img/air-conditioner.png" alt="Klíma ikon" />
+        <h3 data-i18n="service.ac.title">Klímaberendezés</h3>
+        <p data-i18n="service.ac.desc">Hatékony hűtés-fűtés modern, energiatakarékos klímatechnikával.</p>
+      </div>
     </div>
   </section>
 
   <!-- RÓLUNK -->
   <section id="about" class="about-section">
-    <h2>Rólunk</h2>
+    <h2 data-i18n="about.title">Rólunk</h2>
     <div class="about-block">
-      <video
-  src="rolunk.mp4"
-  class="about-img"
-  autoplay
-  loop
-  muted
-  playsinline
-  preload="auto"
-></video>
-
+      <video src="rolunk.mp4" class="about-img" autoplay loop muted playsinline preload="auto"></video>
       <div class="about-text">
-        <p>
-          Több mint 20 éves tapasztalat, lelkes csapat és a legmodernebb
-          technológiák: az Electro Hoterm SRL célja, hogy ügyfelei számára
-          gyors, korrekt, és fenntartható energetikai és komfort megoldásokat
-          kínáljon.
-          <br /><br />
-          Lakossági és ipari projektek, villanyszereléstől a fűtésen át a
-          napelemig – nálunk minden egy kézben!
-        </p>
-        <div class="logos-row">
-          <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó" />
-          <img
-            src="bmr.png"
-            alt="Másodlagos logó"
-          />
-        </div>
+        <p data-i18n="about.text">Több mint 20 éves tapasztalat, lelkes csapat és a legmodernebb technológiák: az Electro Hoterm SRL célja, hogy ügyfelei számára gyors, korrekt, és fenntartható energetikai és komfort megoldásokat kínáljon. Lakossági és ipari projektek, villanyszereléstől a fűtésen át a napelemig – nálunk minden egy kézben!</p>
       </div>
     </div>
   </section>
 
   <!-- REFERENCIÁK -->
   <section id="projects" class="projects-section">
-    <h2>Referenciák</h2>
+    <h2 data-i18n="projects.title">Referenciák</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <img
-          src="amo.jpg"
-          alt="Családi ház – napelemes rendszer"
-        />
-        <div class="project-caption">Családi ház – napelemes rendszer</div>
+        <img src="amo.jpg" alt="Családi ház – napelemes rendszer" />
+        <div class="project-caption" data-i18n="project.amo">Családi ház – napelemes rendszer</div>
       </div>
       <div class="project-card">
-        <img
-          src="beres.jpg"
-          alt="Fronius inverter telepítése"
-        />
-        <div class="project-caption">Solaredge inverter telepítése</div>
+        <img src="beres.jpg" alt="Solaredge inverter telepítése" />
+        <div class="project-caption" data-i18n="project.beres">Solaredge inverter telepítése</div>
       </div>
       <div class="project-card">
-        <img
-          src="mozi.jpg"
-          alt="Growatt inverter+akkumulátor telepítése"
-        />
-        <div class="project-caption">Growatt inverter+akkumulátor telepítése</div>
+        <img src="mozi.jpg" alt="Growatt inverter+akkumulátor telepítése" />
+        <div class="project-caption" data-i18n="project.mozi">Growatt inverter+akkumulátor telepítése</div>
       </div>
       <div class="project-card">
-        <img
-          src="cheia.jpg"
-          alt="Padlófűtés szerelés"
-        />
-        <div class="project-caption">Padlófűtés szerelés</div>
+        <img src="cheia.jpg" alt="Padlófűtés szerelés" />
+        <div class="project-caption" data-i18n="project.cheia">Padlófűtés szerelés</div>
       </div>
       <div class="project-card">
-      <img src="teleky.jpg" alt="8KW Napelem rendszer">
-      <div class="project-caption">8KW Napelem rendszer</div>
-    </div>
-    <div class="project-card">
-      <img src="dorka.jpg" alt="20KW Napelem rendszer">
-      <div class="project-caption">20KW Napelem rendszer</div>
-    </div>
-    <!-- ...tetszőleges számú kép... -->
+        <img src="teleky.jpg" alt="8KW Napelem rendszer" />
+        <div class="project-caption" data-i18n="project.teleky">8KW Napelem rendszer</div>
+      </div>
+      <div class="project-card">
+        <img src="dorka.jpg" alt="20KW Napelem rendszer" />
+        <div class="project-caption" data-i18n="project.dorka">20KW Napelem rendszer</div>
+      </div>
     </div>
   </section>
 
   <!-- KAPCSOLAT -->
-<section id="contact" class="contact-section">
-  <div class="contact-card animate-on-scroll">
-    <h2>Kapcsolat</h2>
-    <p><strong>Telefon:</strong> <a href="tel:+40743062253">0743 062 253</a></p>
-    <p><strong>Email:</strong> <a href="mailto:electrohoterm@gmail.com">electrohoterm@gmail.com</a></p>
-    <div class="logos-row" style="justify-content:center; margin-top:1.3rem;">
-      <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó">
-      <img src="bmr.png" alt="Másodlagos logó">
+  <section id="contact" class="contact-section">
+    <div class="contact-card animate-on-scroll">
+      <h2 data-i18n="contact.title">Kapcsolat</h2>
+      <p><strong data-i18n="contact.phoneLabel">Telefon:</strong> <a href="tel:+40743062253">0743 062 253</a></p>
+      <p><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:electrohoterm@gmail.com">electrohoterm@gmail.com</a></p>
+      <div class="logos-row" style="justify-content:center; margin-top:1.3rem;">
+        <img src="img/Electro Hoterm logo.gif" alt="Electro Hoterm logó">
+        <img src="bmr.png" alt="Másodlagos logó">
+      </div>
+      <hr>
+      <h2 data-i18n="contact.formTitle">Írj üzenetet közvetlenül</h2>
+      <form action="https://formspree.io/f/XXXXX" method="POST">
+        <input type="text" name="name" placeholder="Neved" data-i18n-placeholder="contact.namePlaceholder" required>
+        <input type="email" name="_replyto" placeholder="Email címed" data-i18n-placeholder="contact.emailPlaceholder" required>
+        <textarea name="message" placeholder="Üzeneted..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+        <button type="submit" class="btn-main" data-i18n="contact.submitButton">Üzenet küldése</button>
+      </form>
     </div>
-    <hr>
-    <h2>Írj üzenetet közvetlenül</h2>
-    <form action="https://formspree.io/f/XXXXX" method="POST">
-      <input type="text"     name="name"     placeholder="Neved"      required>
-      <input type="email"    name="_replyto" placeholder="Email címed" required>
-      <textarea name="message" placeholder="Üzeneted..." required></textarea>
-      <button type="submit" class="btn-main">Üzenet küldése</button>
-    </form>
-  </div>
-</section>
+  </section>
 
-  
   <!-- FOOTER -->
   <footer>
-    © 2025 Electro Hoterm SRL – Okos fűtés és tiszta energia
+    <p data-i18n="footer.text">© 2025 Electro Hoterm SRL – Okos fűtés és tiszta energia</p>
   </footer>
-
-  <!-- Saját JavaScript -->
-  <script src="js/main.js"></script>
-</body>
-</html>
