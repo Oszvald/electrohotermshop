@@ -564,14 +564,11 @@ footer {
    
 /* Több hely a logók után */
 .logos-row {
-  margin-bottom: 2rem; /* tetszés szerinti érték, pl. 2rem */
+  margin-bottom: 2rem !important;
 }
-
-/* Nagyobb logók */
 .logos-row img {
-  height: 100px;       /* korábban 34px volt, emeld pl. 50px-re */
-  width: auto;        /* arányt megtartva */
-  object-fit: contain;
+  height: 150px !important;
+  width: auto;
 }
 
 
