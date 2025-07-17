@@ -499,7 +499,7 @@ footer {
   background-color: #0d47a1;
 }
 
-/* Mobilnézet */
+/* Mobilnézet – fehér gomb, kék szöveg, kék keret */
 @media (max-width: 800px) {
   .language-switcher {
     flex-direction: column;
@@ -512,20 +512,21 @@ footer {
   .language-switcher button {
     width: 100%;
     text-align: left;
-    /* IDE JAVÍTOTTUK: kék háttér, fehér szöveg */
-    background-color: var(--main-blue);
-    color: #fff;
-    border: none;
+    background-color: #fff;               /* fehér háttér */
+    color: var(--main-blue);              /* kék szöveg */
+    border: 1px solid var(--main-blue);   /* kék keret */
     font-size: 1rem;
     padding: 0.65rem 0.9rem;
     border-radius: 6px;
-    transition: background 0.25s;
+    transition: background 0.25s, color 0.25s;
   }
 
   .language-switcher button:hover {
-    background-color: #0d305d;
+    background-color: var(--main-blue);
+    color: #fff;
   }
 }
+
 /* ===== Kontakt-form egymás alá rendezése ===== */
 
 .contact-card form {
