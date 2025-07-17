@@ -526,4 +526,40 @@ footer {
     background-color: #0d305d;
   }
 }
+/* ===== Kontakt-form egymás alá rendezése ===== */
+
+.contact-card form {
+  display: grid;
+  grid-template-columns: 1fr;  /* egy oszlop */
+  gap: 1rem;                   /* távolság a mezők között */
+  margin-top: 1.5rem;
+}
+
+/* Minden mező 100% széles lesz */
+.contact-card form input,
+.contact-card form textarea,
+.contact-card form button {
+  width: 100%;
+}
+
+/* Kis extra finomítások */
+.contact-card form input,
+.contact-card form textarea {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-card form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-card form button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 
