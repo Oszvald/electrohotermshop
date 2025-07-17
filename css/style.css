@@ -562,5 +562,13 @@ footer {
   font-size: 1.1rem;
   font-weight: 700;
 }
+.logos-row {
+  margin-bottom: 1.5rem; /* tetszőleges érték, pl. 1.5rem */
+}
+
+hr {
+  margin-top: 1.5rem;    /* hogy a vonal se csússzon túl közel a logókhoz */
+}
+
 
 
